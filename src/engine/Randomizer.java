@@ -9,15 +9,16 @@ import java.util.Random;
 
 public class Randomizer {
     private Random random = new Random();
-    private SlotShape slot;
 
     protected SlotShape getSlot() {
-        if (random.nextInt(2) == 1)
+        SlotShape slot;
+        if (random.nextInt(2) == 1) {
             slot = new Apple();
-        else if (random.nextInt(2) == 0)
+        } else if (random.nextInt(2) == 0) {
             slot = new Cherry();
-        else
+        } else {
             slot = new Plam();
+        }
         return slot;
     }
 }

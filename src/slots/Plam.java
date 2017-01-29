@@ -1,11 +1,13 @@
 package slots;
 
 public class Plam extends SlotShape {
-    private String[] palm = {"       *    *  *\n" +
+    private String plam = "       *    *  *\n" +
             "    *              *       * *\n" +
             "  *               *   ****\n" +
-            "     *    *   *           ****\n"};
+            "     *    *   *           ****\n";
 
     @Override
-    public String[] picture() {return palm;}
+    public String picture() {
+        return plam;
+    }
 }

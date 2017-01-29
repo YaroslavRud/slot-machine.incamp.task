@@ -1,10 +1,6 @@
 package slots;
 public abstract class SlotShape {
-    public void draw(String[] a) {
-        for (String q : a) {
-            System.out.println(q);
-        }
-    }
+    public void draw(String a) {System.out.println(a);}
 
-    public abstract String[] picture();
+    public abstract String picture();
 }
