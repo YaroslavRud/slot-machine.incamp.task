@@ -10,11 +10,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpinSlot extends Combinations {
-    private Instructions startingGame = new Instructions();
+    private Instructions startingGame;
     private Randomizer randomizer = new Randomizer();
     private SlotShape slot = null;
 
     public SpinSlot() throws IOException {
+        startingGame = new Instructions();
     }
 
     private void rotate() throws InterruptedException {
@@ -27,24 +28,18 @@ public class SpinSlot extends Combinations {
     }
 
     public void work() throws InterruptedException, IOException {
-        String s;
         int gameScore = 500;
         int winnerBet;
         System.out.println("Enter bet:");
         int bet = checkBet(startingGame.reader.readLine());
-        while (!(s = startingGame.reader.readLine()).equals("0")) {
-            if (s.equals("10") || s.equals("20") || s.equals("30") || s.equals("50") || s.equals("100")) {
-                bet = Integer.parseInt(s);
-            }
-            if (bet != 0) {
-                rotate();
-                gameScore = gameScore - bet;
-                winnerBet = resultBet(bet);
-                gameScore = gameScore + winnerBet;
-                System.out.println("You won:" + winnerBet);
-                System.out.println("Total score:" + gameScore);
-                listCombination.clear();
-            }
+        while (!(startingGame.reader.readLine()).equals("0")) {
+            rotate();
+            gameScore = gameScore - bet;
+            winnerBet = resultBet(bet);
+            gameScore = gameScore + winnerBet;
+            System.out.println("You won:" + winnerBet);
+            System.out.println("Total score:" + gameScore);
+            listCombination.clear();
         }
         System.out.println("You win:" + gameScore + " points");
         startingGame.reader.close();
@@ -58,7 +53,8 @@ public class SpinSlot extends Combinations {
         } else {
             String wrongBet;
             System.out.println("Wrong bet.Please enter one of the proposed bets:10,20,30,50 or 100");
-            while (!((wrongBet = startingGame.reader.readLine()).equals("10") || wrongBet.equals("20") || wrongBet.equals("30") || wrongBet.equals("50") || wrongBet.equals("100"))) {
+            while (!((wrongBet = startingGame.reader.readLine()).equals("10") || wrongBet.equals("20")
+                    || wrongBet.equals("30") || wrongBet.equals("50") || wrongBet.equals("100"))) {
                 System.out.println("Wrong bet.Please enter one of the proposed bets:10,20,30,50 or 100");
             }
             q = wrongBet;
