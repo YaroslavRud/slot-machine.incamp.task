@@ -12,5 +12,6 @@ public class Main {
         GameMenu menu = new GameMenu(reader);
         Game game = menu.game();
         game.play(reader);
+        reader.close();
     }
 }
