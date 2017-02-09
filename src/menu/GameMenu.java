@@ -26,6 +26,7 @@ public class GameMenu {
     private void rules() {
         String rules = "welcome to the games machines\n" +
                 "you will be credited 500 points\n" +
+                "You can choose between two game modes:slot machines or roulette game\n"+
                 "Winning combination:\n" +
                 "Slots game:\n"+
                 "3 the same slots in a row = your bet x2\n" +
