@@ -14,7 +14,8 @@ public abstract class Game {
     Randomizer random_combination = new Randomizer();
     GameScore gameScore = new GameScore();
     Combinations combinations = new Combinations();
-    public abstract void betResult(Combinations combinations, GameScore gameScore) ;
+    public abstract void betResult(Combinations combinations, GameScore gameScore);
+
     public abstract void play(BufferedReader reader) throws IOException;
 
 }

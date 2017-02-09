@@ -24,13 +24,13 @@ public class Combinations {
         String RED = "Red";
         String BLACK = "Black";
         if (choise == 1) {
-            if (RED.equals(color)) {
+            if (color.equals(RED)) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            if (BLACK.equals(color)) {
+            if (color.equals(BLACK)) {
                 return true;
             } else {
                 return false;

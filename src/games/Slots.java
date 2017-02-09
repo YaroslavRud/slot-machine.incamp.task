@@ -14,7 +14,7 @@ public class Slots extends Game {
     private ArrayList<Integer> listCombination = new ArrayList<>();
     GameScore gameScore = new GameScore();
     Combinations combinations = new Combinations();
-    private String palm = "       *    *  *\n" +
+    private String plum = "       *    *  *\n" +
             "    *              *       * *\n" +
             "  *               *   ****\n" +
             "     *    *   *           ****\n";
@@ -38,7 +38,7 @@ public class Slots extends Game {
     public void spinSlot() {
         String slot;
         for (int i = 0; i < 3; i++) {
-            slot = random_combination.getRandomSlot(apple,palm,cherry);
+            slot = random_combination.getRandomSlot(apple,plum,cherry);
             drawSlot(slot);
             writeCombination(slot);
         }
@@ -50,7 +50,7 @@ public class Slots extends Game {
     }
 
     protected void writeCombination(String slot) {
-        if (slot.equals(palm)) {
+        if (slot.equals(plum)) {
             listCombination.add(1);
         }
         if (slot.equals(apple)) {
