@@ -38,6 +38,7 @@ public class Roulette extends Game {
             RANDOM_COLOR = getRandomCombination().getRandomColor(RED,BLACK);
             betResult(getCombinations(), getGameScore());
             System.out.println("Your score:" + getGameScore().getSCORE());
+            System.out.println("Please choose the color: 1 - red,2 - black");
         }
     }
 }
