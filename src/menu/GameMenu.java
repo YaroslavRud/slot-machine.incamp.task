@@ -27,10 +27,11 @@ public class GameMenu {
         String rules = "welcome to the games machines\n" +
                 "you will be credited 500 points\n" +
                 "Winning combination:\n" +
-                "3 the same games in a row = your bet x2\n" +
+                "Slots game:\n"+
+                "3 the same slots in a row = your bet x2\n" +
+                "Roulette game:\n"+
                 "if the color is played = your bet x2\n"+
-                "to end the game, press 0 and press Enter\n" +
-                "the game will start after you do choose to bet and press Enter\n" +
+                "to end the game, enter 0 and press Enter\n" +
                 "Select a game from the proposed\n" + "Press 1 - Roulette," + "2 - Slots.Select nummber and press Enter:";
         System.out.println(rules);
     }
