@@ -33,7 +33,7 @@ public class Slots extends Game {
     private void spinSlot() {
         String slot;
         for (int i = 0; i < 3; i++) {
-            slot = random_combination.getRandomSlot(apple, plum, cherry);
+            slot = getRandomCombination().getRandomSlot(apple, plum, cherry);
             drawSlot(slot);
             writeCombination(slot);
         }
@@ -68,12 +68,11 @@ public class Slots extends Game {
 
     @Override
     public void play(BufferedReader reader) throws IOException {
-        String exit;
         System.out.println("Welcome to slot-machine game!\n" + "Press enter and game will begin");
-        while (!((exit = reader.readLine()).equals("0"))) {
+        while (!((reader.readLine()).equals("0"))) {
             spinSlot();
-            betResult(combinations, gameScore);
-            System.out.println("Your score:" + gameScore.getSCORE());
+            betResult(getCombinations(), getGameScore());
+            System.out.println("Your score:" + getGameScore().getSCORE());
             listCombination.clear();
         }
     }

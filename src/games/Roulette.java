@@ -12,7 +12,7 @@ public class Roulette extends Game {
     private String BLACK = "Black";
     private int CHOSEN_COLOR;
     private String RANDOM_COLOR;
-    public String getColor() {
+    private  String getColor() {
         if (CHOSEN_COLOR == 1) {
             return RED;
         } else {
@@ -35,9 +35,9 @@ public class Roulette extends Game {
     public void play(BufferedReader reader) throws IOException {
         System.out.println("Please choose the color: 1 - red,2 - black");
         while (!((CHOSEN_COLOR = Integer.parseInt(reader.readLine())) == 0)) {
-            RANDOM_COLOR = random_combination.getRandomColor(RED,BLACK);
-            betResult(combinations, gameScore);
-            System.out.println("Your score:" + gameScore.getSCORE());
+            RANDOM_COLOR = getRandomCombination().getRandomColor(RED,BLACK);
+            betResult(getCombinations(), getGameScore());
+            System.out.println("Your score:" + getGameScore().getSCORE());
         }
     }
 }

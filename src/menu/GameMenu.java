@@ -6,18 +6,17 @@ import games.Slots;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class GameMenu {
-    private int result_choise;
+    private int gameMode;
 
     public GameMenu(BufferedReader reader) throws IOException {
         rules();
-        result_choise = Integer.parseInt(reader.readLine());
+        gameMode = Integer.parseInt(reader.readLine());
     }
 
     public Game game() {
-        if (result_choise == 1) {
+        if (gameMode == 1) {
             return new Roulette();
         } else {
             return new Slots();

@@ -8,12 +8,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public abstract class Game {
-    Randomizer random_combination = new Randomizer();
-    GameScore gameScore = new GameScore();
-    Combinations combinations = new Combinations();
+   private Randomizer randomCombination = new Randomizer();
+   private GameScore gameScore = new GameScore();
+   private Combinations combinations = new Combinations();
 
     public abstract void betResult(Combinations combinations, GameScore gameScore);
 
+    public GameScore getGameScore() {
+        return gameScore;
+    }
+
+    public Combinations getCombinations() {
+        return combinations;
+    }
+
     public abstract void play(BufferedReader reader) throws IOException;
 
+    public Randomizer getRandomCombination() {
+        return randomCombination;
+    }
 }
