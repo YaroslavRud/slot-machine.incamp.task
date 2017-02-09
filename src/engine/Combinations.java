@@ -9,7 +9,6 @@ public class Combinations {
         int secondSlot = listCombination.get(1);
         int thirdSlot = listCombination.get(2);
         return firstSlot == secondSlot && firstSlot == thirdSlot;
-
     }
 
     public boolean resultRoulette(String CHOOSEN_COLOR,String RANDOM_COLOR) {return CHOOSEN_COLOR.equals(RANDOM_COLOR);
