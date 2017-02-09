@@ -1,4 +1,4 @@
-package engine;
+package menu;
 
 public class GameScore {
     private int SCORE = 500;

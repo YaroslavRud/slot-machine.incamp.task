@@ -1,7 +1,7 @@
 package games;
 
 import engine.Combinations;
-import engine.GameScore;
+import menu.GameScore;
 
 
 import java.io.BufferedReader;
