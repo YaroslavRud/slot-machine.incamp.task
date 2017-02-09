@@ -23,7 +23,8 @@ public class GameMenu {
             return new Slots();
         }
     }
-    public void rules() {
+
+    private void rules() {
         String rules = "welcome to the games machines\n" +
                 "you will be credited 500 points\n" +
                 "Winning combination:\n" +

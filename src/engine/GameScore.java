@@ -1,8 +1,5 @@
 package engine;
 
-/**
- * Created by Ярослав on 08.02.2017.
- */
 public class GameScore {
     private int SCORE = 500;
     private int BET = 20;

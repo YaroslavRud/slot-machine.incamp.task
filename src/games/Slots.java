@@ -3,17 +3,12 @@ package games;
 import engine.Combinations;
 import engine.GameScore;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
 public class Slots extends Game {
-
     private ArrayList<Integer> listCombination = new ArrayList<>();
-    GameScore gameScore = new GameScore();
-    Combinations combinations = new Combinations();
     private String plum = "       *    *  *\n" +
             "    *              *       * *\n" +
             "  *               *   ****\n" +
@@ -35,21 +30,20 @@ public class Slots extends Game {
             "   *              *\n" +
             "      *   *   *      \n";
 
-    public void spinSlot() {
+    private void spinSlot() {
         String slot;
         for (int i = 0; i < 3; i++) {
-            slot = random_combination.getRandomSlot(apple,plum,cherry);
+            slot = random_combination.getRandomSlot(apple, plum, cherry);
             drawSlot(slot);
             writeCombination(slot);
         }
-
     }
-    public void drawSlot(String a){
+
+    private void drawSlot(String a) {
         System.out.println(a);
-
     }
 
-    protected void writeCombination(String slot) {
+    private void writeCombination(String slot) {
         if (slot.equals(plum)) {
             listCombination.add(1);
         }
@@ -62,25 +56,24 @@ public class Slots extends Game {
     }
 
     @Override
-    public void betResult(Combinations e, GameScore a)  {
- if (e.resultSlotGame(listCombination)){
-     a.winBet();
-     System.out.println("You win 20 points");
- }
-else {
-    a.loseBet();
-     System.out.println("You loose");
-}
+    public void betResult(Combinations e, GameScore a) {
+        if (e.resultSlotGame(listCombination)) {
+            a.winBet();
+            System.out.println("You win 20 points");
+        } else {
+            a.loseBet();
+            System.out.println("You loose");
+        }
     }
 
     @Override
     public void play(BufferedReader reader) throws IOException {
         String exit;
-        System.out.println("Welcome to slot-machine game!\n"+"Press enter and game will begin");
+        System.out.println("Welcome to slot-machine game!\n" + "Press enter and game will begin");
         while (!((exit = reader.readLine()).equals("0"))) {
             spinSlot();
-            betResult(combinations,gameScore);
-            System.out.println("Your score:"+gameScore.getSCORE());
+            betResult(combinations, gameScore);
+            System.out.println("Your score:" + gameScore.getSCORE());
             listCombination.clear();
         }
     }
