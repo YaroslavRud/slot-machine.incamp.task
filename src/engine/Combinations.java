@@ -1,46 +1,40 @@
 package engine;
 
-import slots.Apple;
-import slots.Cherry;
-import slots.Plam;
-import slots.SlotShape;
 
 import java.util.ArrayList;
 
-public class Combinations {
-    protected ArrayList<Integer> listCombination = new ArrayList<>();
-    private int looseBet = 0;
-    private int firstSlot;
-    private int secondSlot;
-    private int thirdSlot;
 
-    public int resultBet(int bet) {
-        firstSlot = listCombination.get(0);
-        secondSlot = listCombination.get(1);
-        thirdSlot = listCombination.get(2);
+public class Combinations {
+
+    public boolean resultSlotGame(ArrayList<Integer> listCombination) {
+
+        int firstSlot = listCombination.get(0);
+        int secondSlot = listCombination.get(1);
+        int thirdSlot = listCombination.get(2);
+        boolean result;
         if (firstSlot == secondSlot && firstSlot == thirdSlot) {
-            return bet * 3;
+            result = true;
+        } else {
+            result = false;
         }
-        if ((firstSlot == 3 && secondSlot == thirdSlot) || (firstSlot == secondSlot && thirdSlot == 3)) {
-            return bet * 3;
-        }
-        if ((firstSlot != secondSlot && secondSlot == thirdSlot) || (firstSlot != thirdSlot && firstSlot == secondSlot)) {
-            return bet * 2;
-        }
-        else {
-            return looseBet;
-        }
+        return result;
     }
 
-    protected void writeCombination(SlotShape slot) {
-        if (slot instanceof Apple) {
-            listCombination.add(1);
-        }
-        if (slot instanceof Plam) {
-            listCombination.add(2);
-        }
-        if (slot instanceof Cherry) {
-            listCombination.add(3);
+    public boolean resultRoulette(int choise, String color) {
+        String RED = "Red";
+        String BLACK = "Black";
+        if (choise == 1) {
+            if (RED.equals(color)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (BLACK.equals(color)) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

@@ -1,24 +1,31 @@
 package engine;
 
-import slots.Apple;
-import slots.Cherry;
-import slots.Plam;
-import slots.SlotShape;
 
 import java.util.Random;
 
-public class Randomizer {
+public  class Randomizer {
     private Random random = new Random();
 
-    protected SlotShape getSlot() {
-        SlotShape slot;
+    public String getRandomSlot(String apple,String palm,String cherry) {
+        String slot;
         if (random.nextInt(2) == 1) {
-            slot = new Apple();
+           slot = apple;
         } else if (random.nextInt(2) == 0) {
-            slot = new Cherry();
+            slot = cherry;
         } else {
-            slot = new Plam();
+            slot = palm;
         }
         return slot;
+    }
+    public String getRandomColor(String RED,String BLACK){
+        String color;
+        if (random.nextInt(1) == 1) {
+            color = RED;
+        }
+        else {
+            color = BLACK;
+        }
+        return color;
+
     }
 }
